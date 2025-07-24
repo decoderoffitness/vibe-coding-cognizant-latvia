@@ -1,3 +1,5 @@
+🚀 #TechFix - Automation Error Resolver
+
 AI-powered solutions for automation testing errors. Get instant fixes for Selenium, Playwright, and Cypress issues.
 
 🌟 Live Demo
