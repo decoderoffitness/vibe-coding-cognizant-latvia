@@ -2,24 +2,30 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # Your source code branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      pages: write  # Explicitly grant write access for Pages
-      contents: read  # Required to read the repository contents
+      pages: write  # For Pages configuration
+      contents: write # CRITICAL: For pushing content to gh-pages branch
+      id-token: write # Good practice for OIDC (OpenID Connect)
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Replace API Key
         run: |
           echo "Before replacement: $(Get-Content script.js)"
           (Get-Content script.js) -replace 'process.env.API_KEY', '${{ secrets.open_api_key }}' | Set-Content script.js
           echo "After replacement: $(Get-Content script.js)"
-        shell: pwsh
+        shell: pwsh # Keep this if you need PowerShell syntax on Ubuntu
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Ensure this is the root directory
+          publish_dir: ./ # Where your static files are located
+          # THIS IS THE KEY FIX FOR THE PEACEIRIS ACTION'S PERMISSIONS
+          token: ${{ secrets.GITHUB_TOKEN }}
