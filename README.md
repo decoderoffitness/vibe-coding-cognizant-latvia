@@ -1,6 +1,6 @@
 # 🚀 #VibeFix - Automation Error Resolver
 
-# 🚀 #Author : Monty Bagati , monty.bagati@cognizant.com
+# 🚀 #Author : Monty Bagati ,                          monty.bagati@cognizant.com
 
 ## 🌟 Live Demo
 
