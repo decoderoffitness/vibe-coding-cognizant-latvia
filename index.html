@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoTest Error Helper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>AutoTest Error Helper</h1>
+  </header>
 
+  <main>
+    <div class="form-section">
+      <label for="tool">Choose a testing tool:</label>
+      <select id="tool">
+        <option value="Selenium">Selenium</option>
+        <option value="Playwright">Playwright</option>
+        <option value="Cypress">Cypress</option>
+      </select>
+
+      <label for="errorInput">Paste your error message:</label>
+      <textarea id="errorInput" placeholder="e.g. StaleElementReferenceException..."></textarea>
+
+      <button id="explainBtn">Explain Error</button>
+    </div>
+
+    <div class="response-section" id="response" style="display: none;">
+      <h2>Error Explanation</h2>
+      <div id="resultText">Loading...</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AutoTest Error Helper</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
