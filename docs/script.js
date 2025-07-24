@@ -14,7 +14,7 @@ const popularIssues = [
     tool: "selenium",
     title: "WebDriverException",
     description: "Driver initialization failures and connection timeouts",
-    icon: "fab fa-selenium",
+    icon: "fas fa-robot",
     color: "color: #3b82f6"
   },
   {
@@ -30,7 +30,7 @@ const popularIssues = [
     tool: "cypress",
     title: "CypressError",
     description: "Command queue and assertion failures",
-    icon: "fas fa-tree", 
+    icon: "fas fa-vial", 
     color: "color: #22c55e"
   },
   {
@@ -38,7 +38,7 @@ const popularIssues = [
     tool: "selenium",
     title: "StaleElementReference",
     description: "DOM changes invalidating element references",
-    icon: "fab fa-selenium",
+    icon: "fas fa-robot",
     color: "color: #3b82f6"
   },
   {
@@ -54,7 +54,7 @@ const popularIssues = [
     tool: "cypress",
     title: "Flaky Tests",
     description: "Intermittent test failures and race conditions", 
-    icon: "fas fa-tree",
+    icon: "fas fa-vial",
     color: "color: #22c55e"
   }
 ];
