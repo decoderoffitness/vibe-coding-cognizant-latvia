@@ -11,16 +11,16 @@ async function getSolution() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'text-davinci-003',
-                prompt: `For ${tool}, resolve this error: ${error}. Provide a solution and a brief explanation.`,
+                model: 'gpt-3.5-turbo',
+                messages: [{ role: 'user', content: `For ${tool}, resolve this error: ${error}. Provide a solution and a brief explanation.` }],
                 max_tokens: 500
             })
         });
         const data = await response.json();
-        solutionDiv.innerText = data.choices[0].text;
+        solutionDiv.innerText = data.choices[0].message.content;
         solutionDiv.style.display = 'block';
     } catch (error) {
-        solutionDiv.innerText = 'Error fetching solution. Check your input or API key.';
+        solutionDiv.innerText = 'Error fetching solution. Check your input or API key. Details: ' + error.message;
         solutionDiv.style.display = 'block';
     }
 }
