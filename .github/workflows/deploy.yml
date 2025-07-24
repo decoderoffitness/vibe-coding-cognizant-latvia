@@ -5,16 +5,21 @@ on:
       - main
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # Still uses Ubuntu by default, but PowerShell works cross-platform
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write  # Explicitly grant write access for Pages
+      contents: read  # Required to read the repository contents
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Replace API Key
         run: |
+          echo "Before replacement: $(Get-Content script.js)"
           (Get-Content script.js) -replace 'process.env.API_KEY', '${{ secrets.open_api_key }}' | Set-Content script.js
-        shell: pwsh  # Use PowerShell to execute the command
+          echo "After replacement: $(Get-Content script.js)"
+        shell: pwsh
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./  # Ensure this is the root directory
