@@ -1,0 +1,25 @@
+
+Monty Bagati <bagati.monty@gmail.com>
+14:15 (0 minutes ago)
+to me
+
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Still uses Ubuntu by default, but PowerShell works cross-platform
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Replace API Key
+        run: |
+          (Get-Content script.js) -replace 'process.env.API_KEY', '${{ secrets.open_api_key }}' | Set-Content script.js
+        shell: pwsh  # Use PowerShell to execute the command
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
