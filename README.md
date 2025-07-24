@@ -1,6 +1,6 @@
 ## 🌟 Live Demo
 
-**👉 [Visit #TechFix](https://decoderoffitness.github.io/vibe-coding-cognizant-latvia/)**
+**👉 [Visit #VibeFix](https://decoderoffitness.github.io/vibe-coding-cognizant-latvia/)**
 
 # 🚀 #Creator : Monty Bagati , monty.bagati@cognizant.com , +371 25657827
 
