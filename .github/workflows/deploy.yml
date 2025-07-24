@@ -1,8 +1,3 @@
-
-Monty Bagati <bagati.monty@gmail.com>
-14:15 (0 minutes ago)
-to me
-
 name: Deploy to GitHub Pages
 on:
   push:
