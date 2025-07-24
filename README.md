@@ -1,10 +1,8 @@
 ## 🌟 Live Demo
 
-**👉 [Visit #VibeFix](https://decoderoffitness.github.io/vibe-coding-cognizant-latvia/)**
-
 # 🚀 #Creator : Monty Bagati , monty.bagati@cognizant.com , +371 25657827
 
-# 🚀 #TechFix - Automation Error Resolver
+# 🚀 #VibeFix - Automation Error Resolver
 
 > **AI-powered solutions for automation testing errors. Get instant fixes for Selenium, Playwright, and Cypress issues.**
 
