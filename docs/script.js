@@ -363,3 +363,8 @@ function toggleMobileNav() {
   const navMenu = document.getElementById('nav-menu');
   navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
 }
+
+// Contact info function
+function showContactInfo() {
+  alert('Contact Information:\n\nEmail: monty.bagati@cognizant.com\nPhone: +371 25657827');
+}
