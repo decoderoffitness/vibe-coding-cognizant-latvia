@@ -441,6 +441,8 @@ body {
   font-size: 0.9rem;
   resize: vertical;
   transition: border-color 0.2s;
+  min-height: 320px;
+  line-height: 1.5;
 }
 
 .input-group textarea:focus {
